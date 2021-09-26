@@ -10,8 +10,11 @@ module com.example.parserexcelbellsoftmavenfx {
     requires eu.hansolo.tilesfx;
     requires java.sql;
     requires org.apache.poi.poi;
-    requires org.apache.poi.ooxml;
+
     requires org.apache.commons.compress;
+    requires org.apache.logging.log4j.core;
+    requires org.apache.logging.log4j;
+    requires org.apache.poi.ooxml;
 
 
     opens com.example.parserexcelbellsoftmavenfx to javafx.fxml;

@@ -1,6 +1,10 @@
 package com.example.parserexcelbellsoftmavenfx.Parser;
 
+import com.example.parserexcelbellsoftmavenfx.DB.Database;
 import com.example.parserexcelbellsoftmavenfx.Errors.Errno;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -31,14 +35,20 @@ public class Parser extends Errno {
     private int row = 0;
     private int cell = 0;
 
+    private final Logger log;
+
     public Parser(String fileName) {
         this.fileName = fileName;
 
+        log = LogManager.getLogger("LOGGER");
+
         if(this.checkFormat()) {
             this.setState(STATE_OK, "");
+            log.info("Check format terminated has been successfully!");
         }
         else{
             this.setState(this.STATE_FORMAT_FILE_IS_NOT_SUPPORTED, "");
+            log.error(this.getErrnoStr());
         }
     }
 
@@ -46,8 +56,11 @@ public class Parser extends Errno {
         this.fileName = fileName;
         this.listNumber = listNumber;
 
+        log = LogManager.getLogger("LOGGER");
+
         if(this.checkFormat()) {
             setState(STATE_OK, "");
+            log.info("Check format terminated has been successfully!");
         }
         else{
             setState(STATE_FORMAT_FILE_IS_NOT_SUPPORTED, "");
@@ -69,8 +82,6 @@ public class Parser extends Errno {
     public int getCell(){
         return this.cell;
     }
-
-    public int getErrnoNumber(){ return this.errnoNumber; }
 
     public void setRow(int row){
         this.row = row;
@@ -96,11 +107,13 @@ public class Parser extends Errno {
 
         if(this.file != null){
             this.setState(this.STATE_FILE_ALREADY_OPEN, "");
+            log.error(this.getErrnoStr());
             return;
         }
 
         if(!checkFormat()){
             this.setState(this.STATE_FORMAT_FILE_IS_NOT_SUPPORTED, "");
+            log.error(this.getErrnoStr());
             return;
         }
 
@@ -115,19 +128,23 @@ public class Parser extends Errno {
             }
             catch (Exception ex){
                 this.setState(STATE_OTHER_EXCEPTION, ex.getMessage());
+                log.error(this.getErrnoStr());
             }
             finally {
                 if (this.workbookX != null) {
                     this.setState(STATE_OK, "");
+                    log.info("Excel file has been opened successfully!");
                 }
             }
         }
         else {
             if (!this.file.exists()) {
                 this.setState(this.STATE_ERROR_FILE_IS_NOT_FOUND, "");
+                log.error(this.getErrnoStr());
             }
             else{
                 this.setState(this.STATE_ERROR_FILE_CANNOT_BE_OPEN, "");
+                log.error(this.getErrnoStr());
             }
         }
     }
@@ -136,21 +153,26 @@ public class Parser extends Errno {
 
         if(this.workbookX == null) {
             this.setState(STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return;
         }
 
         if(this.workbookX.getNumberOfSheets() <= listNumber) {
             this.setState(this.STATE_SHEET_IS_NOT_FOUND, "");
+            log.error(this.getErrnoStr());
             return;
         }
 
         this.sheetX = this.workbookX.getSheetAt(listNumber);
+        setState(STATE_OK, "");
+        log.info("Focus has been installed on list of workbook excel file successfully!");
     }
 
     public void closeFile() throws IOException {
 
         if(file == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return;
         }
 
@@ -161,10 +183,12 @@ public class Parser extends Errno {
         }
         catch (Exception ex){
             this.setState(this.STATE_OTHER_EXCEPTION, ex.getMessage());
+            log.error(this.getErrnoStr());
         }
         finally {
             if(fileInputStream == null){
                 this.setState(this.STATE_OK, "");
+                log.info("Excel file has been closed!");
             }
         }
     }
@@ -172,13 +196,18 @@ public class Parser extends Errno {
     public int getLastRowNumber(){
         if(file == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
+            return 0;
         }
 
         if(sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
+            return 0;
         }
 
         this.setState(this.STATE_OK, "");
+        log.info("Get last row of list workbook number!");
         return this.sheetX.getLastRowNum();
     }
 
@@ -189,11 +218,13 @@ public class Parser extends Errno {
 
         if(this.workbookX == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
         if(this.sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -211,6 +242,7 @@ public class Parser extends Errno {
             list.add((cell != null)? cell.toString() : "");
         }
 
+        log.info("Get line string values from list workbook!");
         return list;
     }
 
@@ -221,11 +253,13 @@ public class Parser extends Errno {
 
         if(this.workbookX == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
         if(this.sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -243,6 +277,7 @@ public class Parser extends Errno {
             list.add((cell != null)? cell.toString() : "");
         }
 
+        log.info("Get line string values from list workbook!");
         return list;
     }
 
@@ -253,11 +288,13 @@ public class Parser extends Errno {
 
         if(this.workbookX == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
         if(this.sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -275,6 +312,7 @@ public class Parser extends Errno {
             list.add((cell != null)? cell.toString() : "");
         }
 
+        log.info("Get line string values from list workbook!");
         return list;
     }
 
@@ -285,11 +323,13 @@ public class Parser extends Errno {
 
         if(this.workbookX == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
         if(this.sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -307,6 +347,7 @@ public class Parser extends Errno {
             list.add((cell != null)? cell.toString() : "");
         }
 
+        log.info("Get column string values from list workbook!");
         return list;
     }
 
@@ -317,11 +358,13 @@ public class Parser extends Errno {
 
         if(this.workbookX == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
         if(this.sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -339,6 +382,7 @@ public class Parser extends Errno {
             list.add((cell != null)? cell.toString() : "");
         }
 
+        log.info("Get column string values from list workbook!");
         return list;
     }
 
@@ -349,11 +393,13 @@ public class Parser extends Errno {
 
         if(this.workbookX == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
         if(this.sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -371,6 +417,7 @@ public class Parser extends Errno {
             list.add((cell != null)? cell.toString() : "");
         }
 
+        log.info("Get column string values from list workbook!");
         return list;
     }
 
@@ -382,11 +429,13 @@ public class Parser extends Errno {
 
         if(this.workbookX == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
         if(this.sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -411,6 +460,7 @@ public class Parser extends Errno {
             list.add((ArrayList<String>) listBuf.clone());
         }
 
+        log.info("Get lines string values from list workbook!");
         return list;
     }
 
@@ -422,11 +472,13 @@ public class Parser extends Errno {
 
         if(this.workbookX == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
         if(this.sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -451,6 +503,7 @@ public class Parser extends Errno {
             list.add((ArrayList<String>) listBuf.clone());
         }
 
+        log.info("Get lines string values from list workbook!");
         return list;
     }
 
@@ -462,11 +515,13 @@ public class Parser extends Errno {
 
         if(this.workbookX == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
         if(this.sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -491,6 +546,7 @@ public class Parser extends Errno {
             list.add((ArrayList<String>) listBuf.clone());
         }
 
+        log.info("Get lines string values from list workbook!");
         return list;
     }
 
@@ -502,11 +558,13 @@ public class Parser extends Errno {
 
         if(this.workbookX == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
         if(this.sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -531,6 +589,7 @@ public class Parser extends Errno {
             list.add((ArrayList<String>) listBuf.clone());
         }
 
+        log.info("Get columns string values from list workbook!");
         return list;
     }
 
@@ -542,11 +601,13 @@ public class Parser extends Errno {
 
         if(this.workbookX == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
         if(this.sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -571,6 +632,7 @@ public class Parser extends Errno {
             list.add((ArrayList<String>) listBuf.clone());
         }
 
+        log.info("Get columns string values from list workbook!");
         return list;
     }
 
@@ -582,11 +644,13 @@ public class Parser extends Errno {
 
         if(this.workbookX == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
         if(this.sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -611,6 +675,7 @@ public class Parser extends Errno {
             list.add((ArrayList<String>) listBuf.clone());
         }
 
+        log.info("Get columns string values from list workbook!");
         return list;
     }
 
@@ -621,11 +686,13 @@ public class Parser extends Errno {
 
         if(this.workbookX == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return "";
         }
 
         if(this.sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
             return "";
         }
 
@@ -637,6 +704,7 @@ public class Parser extends Errno {
 
         result = resultRow.getCell(this.cell);
 
+        log.info("Get string value from list workbook!");
         return (result != null)? result.toString() : "";
     }
 
@@ -647,11 +715,13 @@ public class Parser extends Errno {
 
         if(this.workbookX == null){
             this.setState(this.STATE_IS_NOT_OPEN_WORKBOOK, "");
+            log.error(this.getErrnoStr());
             return "";
         }
 
         if(this.sheetX == null){
             this.setState(this.STATE_IS_NOT_SELECTED_SHEET, "");
+            log.error(this.getErrnoStr());
             return "";
         }
 
@@ -663,6 +733,7 @@ public class Parser extends Errno {
 
         result = resultRow.getCell(cell);
 
+        log.info("Get string value from list workbook!");
         return (result != null)? result.toString() : "";
     }
 
@@ -699,6 +770,10 @@ public class Parser extends Errno {
     public static void createExcelFile(String fileName, String sheetName, String headers, ArrayList<ArrayList<String>> data){
         File file = new File(fileName);
 
+        final Logger log;
+
+        log = LogManager.getLogger(Parser.class);
+
         int rowCounter = 0;
 
         XSSFWorkbook workbook = new XSSFWorkbook();
@@ -726,7 +801,11 @@ public class Parser extends Errno {
             workbook.write(fileOutputStream);
         }
         catch (Exception ex){
+            log.error(ex.getMessage());
             return;
+        }
+        finally {
+            log.info("Excel file has been created successfully!");
         }
     }
 }

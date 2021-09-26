@@ -1,9 +1,13 @@
 package com.example.parserexcelbellsoftmavenfx.DB;
 
+import com.example.parserexcelbellsoftmavenfx.Configuration.Configuration;
 import com.example.parserexcelbellsoftmavenfx.Errors.Errno;
 import com.example.parserexcelbellsoftmavenfx.Models.TemplateOne;
 import com.example.parserexcelbellsoftmavenfx.Models.TemplateThree;
 import com.example.parserexcelbellsoftmavenfx.Models.TemplateTwo;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,18 +25,23 @@ public class Database extends Errno {
 
     private Connection conn;
 
+    private final Logger log;
+
     public Database(String user, String password, String host, int port, String databaseName) {
         this.user = user;
         this.password = password;
         this.host = host;
         this.databaseName = databaseName;
         this.port = port;
+
+        log = LogManager.getLogger("LOGGER");
     }
 
     public boolean openConnection(){
 
         if(conn != null){
             setState(STATE_CONNECTION_ALREADY_OPEN, "");
+            log.error(this.getErrnoStr());
             return false;
         }
 
@@ -43,10 +52,12 @@ public class Database extends Errno {
         }
         catch (Exception ex){
             setState(STATE_OTHER_EXCEPTION, ex.getMessage());
+            log.error(this.getErrnoStr());
             return false;
         }
         finally {
             setState(STATE_OK, "");
+            log.info("Database connection is opened!");
             return true;
         }
     }
@@ -66,8 +77,10 @@ public class Database extends Errno {
                 stmt.execute();
             } catch (Exception ex) {
                 setState(STATE_OTHER_EXCEPTION, ex.getMessage());
+                log.error(this.getErrnoStr());
                 return;
             }
+            log.info("Inserted a line from table SimpleTableForTemplateOne");
         }
     }
 
@@ -84,7 +97,11 @@ public class Database extends Errno {
             stmt.execute();
         } catch (Exception ex) {
             setState(STATE_OTHER_EXCEPTION, ex.getMessage());
+            log.error(this.getErrnoStr());
             return;
+        }
+        finally {
+            log.info("Inserted a line from table SimpleTableForTemplateOne");
         }
     }
 
@@ -107,7 +124,11 @@ public class Database extends Errno {
                 stmt.execute();
             } catch (Exception ex) {
                 setState(STATE_OTHER_EXCEPTION, ex.getMessage());
+                log.error(this.getErrnoStr());
                 return;
+            }
+            finally {
+                log.info("Inserted a line from table SimpleTableForTemplateTwo");
             }
         }
     }
@@ -126,8 +147,12 @@ public class Database extends Errno {
             stmt.execute();
             } catch (Exception ex) {
                 setState(STATE_OTHER_EXCEPTION, ex.getMessage());
+                log.error(this.getErrnoStr());
                 return;
             }
+            finally {
+            log.info("Inserted a line from table SimpleTableForTemplateTwo");
+        }
     }
 
     public void insertDataTableThree(ArrayList<ArrayList<String>> data){
@@ -152,7 +177,11 @@ public class Database extends Errno {
                 stmt.execute();
             } catch (Exception ex) {
                 setState(STATE_OTHER_EXCEPTION, ex.getMessage());
+                log.error(this.getErrnoStr());
                 return;
+            }
+            finally {
+                log.info("Inserted a line from table SimpleTableForTemplateThree");
             }
         }
     }
@@ -172,7 +201,11 @@ public class Database extends Errno {
             stmt.execute();
         } catch (Exception ex) {
             setState(STATE_OTHER_EXCEPTION, ex.getMessage());
+            log.error(this.getErrnoStr());
             return;
+        }
+        finally {
+            log.info("Inserted a line from table SimpleTableForTemplateThree");
         }
     }
 
@@ -191,6 +224,7 @@ public class Database extends Errno {
             resultSet = stmt.executeQuery();
 
             while (resultSet.next()){
+                log.info("Got a line from table SimpleTableForTemplateOne");
                 listElement.clear();
 
                 templateOne = new TemplateOne(0, resultSet.getString(template.split(":")[0]), resultSet.getString(template.split(":")[1]));
@@ -204,6 +238,7 @@ public class Database extends Errno {
         }
         catch (Exception ex){
             setState(STATE_OTHER_EXCEPTION, ex.getMessage());
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -225,6 +260,7 @@ public class Database extends Errno {
             resultSet = stmt.executeQuery();
 
             while (resultSet.next()){
+                log.info("Got a line from table SimpleTableForTemplateTwo");
                 listElement.clear();
 
                 templateTwo = new TemplateTwo(0, resultSet.getString(template.split(":")[0]), resultSet.getString(template.split(":")[1]), resultSet.getLong(template.split(":")[2]));
@@ -239,6 +275,7 @@ public class Database extends Errno {
         }
         catch (Exception ex){
             setState(STATE_OTHER_EXCEPTION, ex.getMessage());
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -260,6 +297,7 @@ public class Database extends Errno {
             resultSet = stmt.executeQuery();
 
             while (resultSet.next()){
+                log.info("Got a line from table SimpleTableForTemplateThree");
                 listElement.clear();
 
                 templateThree = new TemplateThree(0, resultSet.getString(template.split(":")[0]), resultSet.getString(template.split(":")[1]), resultSet.getLong(template.split(":")[2]), resultSet.getBoolean(template.split(":")[3]));
@@ -275,6 +313,7 @@ public class Database extends Errno {
         }
         catch (Exception ex){
             setState(STATE_OTHER_EXCEPTION, ex.getMessage());
+            log.error(this.getErrnoStr());
             return list;
         }
 
@@ -284,6 +323,7 @@ public class Database extends Errno {
     public void closeConnection(){
         if(conn == null){
             setState(STATE_CONNECTION_IS_NOT_OPEN, "");
+            log.error(this.getErrnoStr());
             return;
         }
 
@@ -292,6 +332,11 @@ public class Database extends Errno {
         }
         catch (Exception ex){
             setState(STATE_OTHER_EXCEPTION, ex.getMessage());
+            log.error(this.getErrnoStr());
+            return;
+        }
+        finally {
+            log.info("Database connection is closed!");
         }
     }
 
