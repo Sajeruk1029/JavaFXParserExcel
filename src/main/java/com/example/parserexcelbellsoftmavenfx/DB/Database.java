@@ -34,7 +34,7 @@ public class Database extends Errno {
         this.databaseName = databaseName;
         this.port = port;
 
-        log = LogManager.getLogger("LOGGER");
+        log = LogManager.getLogger(getClass().getName());
     }
 
     public boolean openConnection(){

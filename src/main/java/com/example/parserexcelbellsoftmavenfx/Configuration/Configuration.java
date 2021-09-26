@@ -3,6 +3,7 @@ package com.example.parserexcelbellsoftmavenfx.Configuration;
 import com.example.parserexcelbellsoftmavenfx.Errors.Errno;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.*;
 
 import java.io.File;
 import java.io.FileReader;
@@ -20,7 +21,7 @@ public class Configuration extends Errno {
     private final Logger log;
 
     public Configuration(String nameFile) {
-        log = LogManager.getLogger("l3oc.com");
+        log = LogManager.getLogger(getClass().getName());
         this.nameFile = nameFile;
     }
 

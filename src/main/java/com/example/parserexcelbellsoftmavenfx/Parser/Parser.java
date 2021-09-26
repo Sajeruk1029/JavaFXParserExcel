@@ -40,7 +40,7 @@ public class Parser extends Errno {
     public Parser(String fileName) {
         this.fileName = fileName;
 
-        log = LogManager.getLogger("LOGGER");
+        log = LogManager.getLogger(getClass().getName());
 
         if(this.checkFormat()) {
             this.setState(STATE_OK, "");
@@ -56,7 +56,7 @@ public class Parser extends Errno {
         this.fileName = fileName;
         this.listNumber = listNumber;
 
-        log = LogManager.getLogger("LOGGER");
+        log = LogManager.getLogger(getClass().getName());
 
         if(this.checkFormat()) {
             setState(STATE_OK, "");

@@ -1,0 +1,133 @@
+00:23:30.158 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template one from the config file!
+00:23:30.160 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template two from the config file!
+00:23:30.161 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template three from the config file!
+00:23:30.161 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the table name from the config file!
+00:23:30.161 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Configuration file is closed!
+00:23:37.571 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Check format terminated has been successfully!
+00:23:38.078 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Excel file has been opened successfully!
+00:23:38.078 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Focus has been installed on list of workbook excel file successfully!
+00:23:38.116 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Get lines string values from list workbook!
+00:23:38.123 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Excel file has been closed!
+00:23:39.975 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Check format terminated has been successfully!
+00:23:40.027 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Excel file has been opened successfully!
+00:23:40.268 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Database connection is opened!
+00:23:40.268 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Focus has been installed on list of workbook excel file successfully!
+00:23:40.268 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get sleep mills from the config file!
+00:23:40.268 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get sleep mills from the config file!
+00:23:40.273 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Get lines string values from list workbook!
+00:23:40.274 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Get line string values from list workbook!
+00:23:40.277 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Get lines string values from list workbook!
+00:23:40.277 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template one from the config file!
+00:23:40.293 [Thread-2] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template one from the config file!
+00:23:40.367 [Thread-2] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Inserted a line from table SimpleTableForTemplateOne
+00:23:45.403 [Thread-2] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Inserted a line from table SimpleTableForTemplateOne
+00:23:50.573 [Thread-2] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Inserted a line from table SimpleTableForTemplateOne
+00:23:55.621 [Thread-2] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Inserted a line from table SimpleTableForTemplateOne
+00:24:00.622 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Excel file has been closed!
+00:24:00.623 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Configuration file is closed!
+00:24:00.630 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Database connection is closed!
+00:24:05.517 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Check format terminated has been successfully!
+00:24:05.553 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Excel file has been opened successfully!
+00:24:05.607 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Database connection is opened!
+00:24:05.607 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Focus has been installed on list of workbook excel file successfully!
+00:24:05.607 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get sleep mills from the config file!
+00:24:05.607 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get sleep mills from the config file!
+00:24:05.611 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Get lines string values from list workbook!
+00:24:05.612 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Get line string values from list workbook!
+00:24:05.614 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Get lines string values from list workbook!
+00:24:05.614 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template one from the config file!
+00:24:05.614 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template two from the config file!
+00:24:05.615 [Thread-3] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template one from the config file!
+00:24:05.616 [Thread-3] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template two from the config file!
+00:24:05.628 [Thread-3] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Inserted a line from table SimpleTableForTemplateTwo
+00:24:10.657 [Thread-3] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Inserted a line from table SimpleTableForTemplateTwo
+00:24:15.691 [Thread-3] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Inserted a line from table SimpleTableForTemplateTwo
+00:24:20.728 [Thread-3] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Inserted a line from table SimpleTableForTemplateTwo
+00:24:25.728 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Excel file has been closed!
+00:24:25.729 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Configuration file is closed!
+00:24:25.729 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Database connection is closed!
+00:24:28.924 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Check format terminated has been successfully!
+00:24:28.962 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Excel file has been opened successfully!
+00:24:28.966 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Database connection is opened!
+00:24:28.966 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Focus has been installed on list of workbook excel file successfully!
+00:24:28.966 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get sleep mills from the config file!
+00:24:28.966 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get sleep mills from the config file!
+00:24:28.970 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Get lines string values from list workbook!
+00:24:28.970 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Get line string values from list workbook!
+00:24:28.972 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Get lines string values from list workbook!
+00:24:28.972 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template one from the config file!
+00:24:28.972 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template two from the config file!
+00:24:28.977 [Thread-4] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template one from the config file!
+00:24:28.977 [Thread-4] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template two from the config file!
+00:24:29.010 [Thread-4] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Inserted a line from table SimpleTableForTemplateThree
+00:24:34.034 [Thread-4] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Inserted a line from table SimpleTableForTemplateThree
+00:24:39.062 [Thread-4] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Inserted a line from table SimpleTableForTemplateThree
+00:24:44.110 [Thread-4] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Inserted a line from table SimpleTableForTemplateThree
+00:24:49.111 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Excel file has been closed!
+00:24:49.111 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Configuration file is closed!
+00:24:49.112 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Database connection is closed!
+00:24:51.220 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template one from the config file!
+00:24:51.221 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template two from the config file!
+00:24:51.221 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template three from the config file!
+00:24:51.221 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Configuration file is closed!
+00:24:56.582 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Database connection is opened!
+00:24:56.583 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template one from the config file!
+00:24:56.626 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.627 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.627 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.627 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.628 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.628 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.628 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.628 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.628 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.629 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.629 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.629 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.630 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.630 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.630 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.630 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.630 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.630 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.631 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:56.631 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateOne
+00:24:57.474 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Excel file has been created successfully!
+00:24:57.474 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Database connection is closed!
+00:24:57.474 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Configuration file is closed!
+00:25:06.567 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Database connection is opened!
+00:25:06.567 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template one from the config file!
+00:25:06.567 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template two from the config file!
+00:25:06.568 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateTwo
+00:25:06.569 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateTwo
+00:25:06.569 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateTwo
+00:25:06.569 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateTwo
+00:25:06.569 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateTwo
+00:25:06.570 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateTwo
+00:25:06.570 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateTwo
+00:25:06.570 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateTwo
+00:25:06.570 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateTwo
+00:25:06.570 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateTwo
+00:25:06.570 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateTwo
+00:25:06.571 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateTwo
+00:25:06.617 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Excel file has been created successfully!
+00:25:06.617 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Database connection is closed!
+00:25:06.617 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Configuration file is closed!
+00:25:17.414 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Database connection is opened!
+00:25:17.415 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template one from the config file!
+00:25:17.415 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Get the template two from the config file!
+00:25:17.417 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateThree
+00:25:17.417 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateThree
+00:25:17.417 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateThree
+00:25:17.418 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateThree
+00:25:17.418 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateThree
+00:25:17.420 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateThree
+00:25:17.420 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateThree
+00:25:17.421 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateThree
+00:25:17.421 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateThree
+00:25:17.421 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateThree
+00:25:17.421 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateThree
+00:25:17.421 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Got a line from table SimpleTableForTemplateThree
+00:25:17.471 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Parser.Parser - Excel file has been created successfully!
+00:25:17.473 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.DB.Database - Database connection is closed!
+00:25:17.473 [JavaFX Application Thread] INFO  com.example.parserexcelbellsoftmavenfx.Configuration.Configuration - Configuration file is closed!
