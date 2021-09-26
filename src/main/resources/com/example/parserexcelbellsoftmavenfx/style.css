@@ -1,0 +1,11 @@
+VBox{
+    -fx-background-color: white;
+}
+
+.table-row-cell:odd{
+   -fx-background-color: green;
+}
+
+.table-row-cell:even{
+   -fx-background-color: red;
+}
